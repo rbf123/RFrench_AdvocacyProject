@@ -1,0 +1,771 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+/* Part 1: Navbar */
+.navbar {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: row;
+   background-color: transparent; /* Make the navbar background color invisible */
+   position: relative;
+   z-index: 1;
+}
+/* General style rule set for all items in ul */
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin-bottom: 5px; 
+    float: right;
+    margin: 5px;
+    background-color: transparent;
+    
+
+}
+
+/* Style rule set for individual li */
+.navbar ul li {
+    float: right;
+    margin: 20px;
+    display: block;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* Style rule set for individual li link */
+.navbar ul li a {
+    font-family: Arial;
+    color: #645B82;
+    text-align: center
+    padding: 20px;
+    font-size: 20px;
+    display: block;
+    text-decoration: none;
+    float: right;
+    margin: 20px;
+}
+
+/* Style rule set for hovered link */
+.navbar ul li a:hover {
+    font-weight: bold;
+    display: block;
+    text-decoration: none;
+    float: right;
+    margin: 20px;
+}
+
+
+
+
+
+/* Part 2: Flexbox */
+
+/* General style rule set for flex container */
+.flex-container {
+  display: flex;
+  flex-direction: row; /* Aligns children horizontally */
+  gap: 20px;
+  width: 100%; /* Sets the width of the flex container to fill its parent */
+}
+
+
+/* Style rules for flex-item 1 */
+.flex-item:nth-of-type(1) {
+  width: 100%;
+}
+
+/* Style rules for flex-item 2 */
+.flex-item:nth-of-type(2) {
+  width: 100%;
+}
+
+/* Style rules for flex-item 3 */
+.flex-item:nth-of-type(3) {
+  width: 100%;
+}
+
+
+/* Style set for all flex-items */
+.flex-item {
+    background: white;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+.header-container {
+    background-color: #FFF;
+    color: #fff;
+    padding: 20px;
+    padding-top: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  
+}
+
+.header-item:nth-of-type(1) {
+    
+  width: 30%;
+}
+
+.header-item:nth-of-type(2) {
+    
+  width: 70%;
+}
+
+.header-img {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 200px;
+  height: 200px;
+  max-width: 200px;
+  
+    
+}
+
+.header-button {
+    background-color: #A67669;
+    text-align: center;
+    font-size: 90%;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 25px;
+    margin-left: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.header-button:hover {
+    background-color: #59ac5a;
+}
+
+/* Specific styles for links within .header-button */
+.header-button a:link, .header-button a:visited, .header-button a:hover, .header-button a:active {
+    color: #fff; /* Ensures text color is white for all link states */
+    text-decoration: none; /* Optional: Removes underline from links */
+}
+
+.header-title {
+    color: #A67669;
+    font-size: 50px;
+    text-align: center;
+   
+  
+}
+
+h1 {
+  color: #CC7870;
+  font-size: 50px;
+  text-align: center;
+}
+
+h2 {
+  color: #DB966C;
+  font-size: 30px;
+  text-align: center;
+}
+
+h3 {
+  color: #e6b77e;
+  font-size: 30px;
+  text-align: center;
+}
+
+h4 {
+  color: rebeccapurple;
+  font-size: 30px;
+  text-align: center;
+}
+
+h5 {
+  color: rebeccapurple;
+  font-size: 20px;
+  text-align: center;
+}
+
+h6 {
+  color: rebeccapurple;
+  font-size: 20px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between; /* Spaces the content boxes evenly */
+  max-width: 80%;
+  margin: auto; /* Centers the container */
+}
+
+.content-box {
+  border: 1px solid #000; /* Adds a border around each content box */
+  padding: 10px; /* Adds some padding inside the content boxes */
+  flex: 1; /* Allows the content boxes to grow and take up equal space */
+  margin: 10px; /* Adds some space around each content box */
+}
+
+.content-box img {
+  max-width: 100%; /* Ensures the image is responsive and fits within its container */
+  height: auto; /* Maintains the aspect ratio of the image */
+  display: block; /* Makes the image a block-level element */
+}
+
+.revealable {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+
+
+#usa-map path {
+    fill: #cccccc;
+    stroke: #ffffff;
+    stroke-width: 1.5;
+    cursor: pointer;
+}
+
+#usa-map path:hover {
+    fill: #aaaaaa;
+}
+
+#info-box {
+    display: block; /* Hide by default and show on click */
+    position: relative;
+    background-color: white;
+    border: 1px solid #000;
+    padding: 10px;
+    pointer-events: none;
+    z-index: 1000; /* A higher value to ensure it's on top of other elements */
+    max-width: 300px; /* Maximum width of the info-box */
+    max-height: 200px; /* Maximum height of the info-box */
+    overflow: auto; /* Adds scrollbars if content overflows */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to truly center based on the info-box dimensions */
+    font-family: Arial, sans-serif ;
+    text-align: center;
+}
+
+
+
+
+  
+
+.article-header {
+  font-size:medium;
+  color: #645B82;
+  background-color: whitesmoke;
+  font-family: sans-serif;
+}
+
+#banner-img {
+  width: 75%;
+  height: auto;
+  /*width: 1200px;
+  height: 700px;
+  padding: 20px;*/
+  /* Add any additional styling for the image */
+}
+
+body {
+  line-height: 1;
+  padding:10px;
+  margin:10px;
+}
+
+#body-img {
+  width: 1200px;
+  height: 700px;
+  padding: 20px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Creates two columns of equal width */
+  grid-gap: 10px; /* Adjusts the gap between the images */
+  
+}
+
+.image-grid img {
+  width: 70%; /* Makes the images responsive within their grid items */
+  height: auto;/* Maintains the aspect ratio of the images */
+  
+}
+
+
+
+p {
+  color: darkslategray;
+  font-size: 20px;
+  font-family: sans-serif;
+  width: 75%;
+  margin: 0 auto; /* Center the paragraphs horizontally */
+}
+
+.flex-paragraph {
+  flex: 1; /* Allows the paragraph to grow and fill the available space */
+  /* Optional: Add padding or margin as needed */
+  padding: 10px;
+  width 75%;
+  margin: 0 auto;
+}
+
+
+.content-container {
+  display: flex;
+  align-items: center; /* Aligns items vertically in the center */
+  justify-content: space-between; /* Spaces the image and paragraph evenly */
+  flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens */
+}
+
+.content-container img, .content-container p {
+  flex: 1; /* Allows the image and paragraph to grow and take up equal space */
+  margin: 50px; /* Adds some space around the image and paragraph */
+}
+
+.content-container p, .content-container img   {
+  flex: 1; /* Allows the image and paragraph to grow and take up equal space */
+  margin: 50px; /* Adds some space around the image and paragraph */
+}
+
+.content-container img {
+  max-width: 40%; /* Limits the image width to 50% of the container */
+  height: auto; /* Maintains the aspect ratio of the image */
+}
+
+.svg-container, .text-container {
+  flex: 1; /* This makes both children take up equal width */
+  padding: 20px; /* Adds space inside the boxes */
+    
+}
+
+.svg-container {
+  border: 1px solid #000; /* Add a border around the SVG */
+  padding: 10px; /* Optional: Add some padding around the SVG */
+  width: 80%;
+  margin: 0 auto;
+  
+}
+
+.text-container {
+    /* Additional styling for the text container if needed */
+}
+
+.text-container, .video {
+  flex: 1; /* This makes both children take up equal width */
+  padding: 20px; /* Adds space inside the boxes */
+
+}
+
+
+.callout-banner {
+  background-color: #f2f2f2;
+  border-left: 5px solid #DB966C;
+  padding: 20px;
+  margin: 20px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+
+
+.petition {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.petition-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+.petition-para {
+  width: 55%;
+  padding-right: 10px;
+}
+
+.signatures {
+  width: 45%;
+  padding-right: 10px;
+}
+
+/*css for form */
+.petition-form-container {
+  margin: 40px;
+  text-align: center;
+  width: 90%;
+}
+
+.petition-form {
+  width 100%
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box
+  
+}
+
+.form-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group textarea {
+  flex: 1;
+  width: 60%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submit-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+}
+
+.error {
+  border-style: solid;
+  border-width: 2px;
+  border-color: red;
+  background:pink;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.video-container {
+  display: flex;
+  justify-content: space-around; /* This will space out the videos evenly */
+  align-items: center; /* This will vertically align the videos in the middle */
+  flex-wrap: wrap; /* This allows the videos to wrap into the next line on smaller screens */
+}
+
+.video {
+  flex: 1; /* This allows the videos to grow and take up equal space */
+  padding: 10px; /* Adds some space around each video */
+}
+
+
+/* First article attempt - vertical rows of news articles
+article {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+article h3 {
+    color: #333;
+    font-size: 20px;
+}
+
+article p {
+    color: #555;
+    font-size: 16px;
+} */
+
+.articles-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 10px;
+}
+
+article {
+  padding: 10px;
+  margin: 5px; /* Reset the margin to ensure consistent spacing */
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* This ensures the content is spaced out vertically */
+  height: 100%; /* Make articles of different content length look uniform */
+}
+
+article h3 {
+  color: #333;
+  font-size: 20px;
+}
+
+article p {
+  color: #555;
+  font-size: 16px;
+}
+
+ul.square {
+  list-style: square; /* Set square bullets for this unordered list */
+  color: #E0D2B2
+  font-size: 20px;
+  font-family: sans-serif;
+  
+}
+
+/* Define ruleset for unvisited links */
+a:link {
+  color: blue; /* Default color for unvisited links */
+  text-decoration: none; /* Remove underline from unvisited links */
+}
+
+/* Define ruleset for visited links */
+a:visited {
+  color: purple;
+  text-decoration: underline;/* Color for visited links */
+}
+
+/* Define ruleset for link hover effect */
+a:hover {
+  color: #e6acd1; /* Color for link on hover */
+}
+
+/* Define ruleset for active links (while clicked) */
+a:active {
+  color: green; /* Color for active links (while clicked) */
+}
+
+#theme-button {
+  text-decoration: underline;
+  font: 20px;
+  color: #645B82
+  padding: 20px;
+  border: 1px dotted;
+  border-width: 1px;
+}
+
+/* 1st try customize Dark Mode Theme 
+.dark-mode {
+background-color: black;
+  color: white; */
+
+/* 2nd try Customize Dark Mode Theme */
+.dark-mode {
+  background-color: #1a1a1a;
+  color: #f2f2f2;
+}
+
+.dark-mode .navbar ul {
+  background-color: transparent;
+}
+
+.dark-mode .navbar ul li a {
+  color: #f2f2f2;
+}
+
+.dark-mode .navbar ul li a:hover {
+  color: #b3b3b3;
+}
+
+.dark-mode .header-container {
+  background-color: #1a1a1a;
+  color: #f2f2f2;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6 {
+  color: #f2f2f2;
+}
+
+.dark-mode p {
+  color: #b3b3b3;
+}
+
+.dark-mode .callout-banner {
+  background-color: #4d4d4d;
+  border-left: 5px solid #DB966C;
+  padding: 20px;
+  margin: 20px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333333;
+}
+
+.dark-mode .petition {
+  border-color: #4d4d4d;
+}
+
+.dark-mode .petition-form {
+  border-color: #4d4d4d;
+}
+
+.dark-mode .form-group input,
+.dark-mode .form-group textarea {
+  background-color: #333333;
+  color: #f2f2f2;
+  border-color: #4d4d4d;
+}
+
+.dark-mode .submit-btn {
+  background-color: #4d4d4d;
+  color: #f2f2f2;
+}
+
+.dark-mode .submit-btn:hover {
+  background-color: #595959;
+}
+
+.dark-mode article {
+  background-color: #333333;
+  border-color: #4d4d4d;
+}
+
+.dark-mode article h3 {
+  color: #f2f2f2;
+}
+
+.dark-mode article p {
+  color: #b3b3b3;
+}
+
+.dark-mode .article-header {
+  background-color: #4d4d4d;
+  color: #f2f2f2;
+}
+
+.dark-mode ul.square {
+  color: #b3b3b3;
+}
+
+.dark-mode a:link {
+  color: #80b3ff;
+}
+
+.dark-mode a:visited {
+  color: #b380ff;
+}
+
+.dark-mode a:hover {
+  color: #ff8080;
+}
+
+.dark-mode a:active {
+  color: #80ff80;
+}
+
+.dark-mode #theme-button {
+  color: #ff8040;
+  border-color: #E0D2B2;
+  
+} 
+
+.dark-mode error {
+  border-style: solid;
+  border-width: 2px;
+  border-color: red;
+  background:pink;
+}
+
+
+
+.footer {
+  font-size: 14px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: transparent; /* Set the background color to transparent */
+  padding: 10px 0; /* Add some padding to the footer */
+  text-align: center;
+  justify-content: space-around;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  
+.footer-image {
+  margin-right: 10px; /* Add some spacing between the image and text */
+    /* display: block; /* Ensure the image is a block element
+    margin: 0 auto; /* Center the image horizontally */ 
+  }
+
+
+}
+/*
+colors I like: 
+#645B82
+#E0D2B2
+#EDE3C7
+#E6B77E
+#DB966C
+#CC7870
+#A67669
+*/
