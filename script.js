@@ -13,168 +13,10 @@ const toggleDarkMode = () => {
 themeButton.addEventListener("click", toggleDarkMode);
 
 
-/* test
-// Query for button with an id "sign-now-button"
-const signNowButton = document.getElementById('sign-now-button');
-let count = 3; // Initial count of signatures
 
 
 
-// Function to add a signature
-const addSignature = (event) => {
-  event.preventDefault(); // Prevent the default form submission behavior
-  const nameInput = document.getElementById('name');
-  const hometownInput = document.getElementById('hometown');
-  const emailInput = document.getElementById('email');
-  const commentsInput = document.getElementById('comments');
-
-  const signatureElement = document.createElement('p');
-  signatureElement.classList.add('signature');
-
-  const signatureText = `🖊️ ${nameInput.value} from ${hometownInput.value} supports this.`;
-  signatureElement.textContent = signatureText;
-
-  const signaturesContainer = document.querySelector('.signatures');
-  signaturesContainer.appendChild(signatureElement);
-
-  // Update the signature count
-  const counterElement = document.getElementById('counter');
-  counterElement.remove(); // Remove the old counter
-
-  count++; // Increment the count
-  const newCounterElement = document.createElement('p');
-  newCounterElement.id = 'counter';
-  newCounterElement.textContent = `🖊️ ${count} people have signed this petition and support this cause.`;
-  signaturesContainer.appendChild(newCounterElement);
-
-  
-  nameInput.value = '';
-  hometownInput.value = '';
-  emailInput.value = '';
-  commentsInput.value = '';
-};
-
-//removing this because of validation signNowButton.addEventListener('click', addSignature); 
-
-
-
- // Function to validate the form
-  const validateForm = () => {
-
-  let containsErrors = false;
-  let petitionInputs = document.getElementById("sign-petition").elements;
-  const email = document.getElementById('email'); // Define the email variable
-  // Loop through all inputs
-  for (let i = 0; i < petitionInputs.length; i++) {
-    // Validate the value of each input
-      if (petitionInputs[i].value.length < 2) {
-        petitionInputs[i].classList.add('error');
-        containsErrors = true;
-      } else {
-        petitionInputs[i].classList.remove('error');
-      }
-    }
-
-    // Step 5: Add specific validation for the email address input if it does not contain a .com address.
-
-  if (!email.value.includes('.com')) {
-    email.classList.add('error');
-    containsErrors = true;
-  } else {
-    email.classList.remove('error');
-    }
-  
-  if (!containsErrors) {
-    // If no errors, add the signature
-  addSignature();
-    // Loop through all input elements again to clear the form
-  //for (let i = 0; i < petitionInputs.length; i++) {
-   // petitionInputs[i].value = ""; // Clear each input field
-    //}
-  }
-};
-    // Reset the containsErrors boolean for the next form submission
-   // containsErrors = false;
-  //}
-
-// Attach the event listener to the form's submit event
-signNowButton.addEventListener('click', validateForm); 
-
-*/
-/*
-// Query for button with a class "submit-btn"
-const signNowButton = document.querySelector('.submit-btn');
-let count = 3; // Initial count of signatures
-
-// Function to add a signature
-const addSignature = (event) => {
-  event.preventDefault(); // Prevent the default form submission behavior
-  const nameInput = document.getElementById('name');
-  const hometownInput = document.getElementById('hometown');
-  const emailInput = document.getElementById('email');
-  const commentsInput = document.getElementById('comments');
-
-  const signatureElement = document.createElement('p');
-  signatureElement.classList.add('signature');
-
-  const signatureText = `🖊️ ${nameInput.value} from ${hometownInput.value} supports this.`;
-  signatureElement.textContent = signatureText;
-
-  const signaturesContainer = document.querySelector('.signatures');
-  signaturesContainer.appendChild(signatureElement);
-
-  // Update the signature count
-  const counterElement = document.getElementById('counter');
-  counterElement.remove(); // Remove the old counter
-
-  count++; // Increment the count
-  const newCounterElement = document.createElement('p');
-  newCounterElement.id = 'counter';
-  newCounterElement.textContent = `🖊️ ${count} people have signed this petition and support this cause.`;
-  signaturesContainer.appendChild(newCounterElement);
-
-  nameInput.value = '';
-  hometownInput.value = '';
-  emailInput.value = '';
-  commentsInput.value = '';
-};
-
-// Function to validate the form
-const validateForm = (event) => {
-  event.preventDefault(); // Prevent the default form submission behavior
-
-  let containsErrors = false;
-  let petitionInputs = document.getElementById("sign-petition").elements;
-  const email = document.getElementById('email');
-
-  // Loop through all inputs
-  for (let i = 0; i < petitionInputs.length; i++) {
-    // Validate the value of each input
-    if (petitionInputs[i].value.length < 2) {
-      petitionInputs[i].classList.add('error');
-      containsErrors = true;
-    } else {
-      petitionInputs[i].classList.remove('error');
-    }
-  }
-
-  // Add specific validation for the email address input if it does not contain a .com address
-  if (!email.value.includes('.com')) {
-    email.classList.add('error');
-    containsErrors = true;
-  } else {
-    email.classList.remove('error');
-  }
-
-  if (!containsErrors) {
-    // If no errors, add the signature
-    addSignature(event);
-  }
-};
-
-// Attach the event listener to the form's submit event
-signNowButton.addEventListener('click', validateForm);
-*/
+/* unit 8 
 
 // Query for button with a class "submit-btn"
 const signNowButton = document.querySelector('.submit-btn');
@@ -185,30 +27,31 @@ const validateAndAddSignature = (event) => {
   event.preventDefault(); // Prevent the default form submission behavior
 
   const form = document.getElementById("sign-petition");
-  const nameInput = form.elements['name'];
-  const hometownInput = form.elements['hometown'];
-  const emailInput = form.elements['email'];
-  const commentsInput = form.elements['comments'];
+  const petitionInputs = form.elements;
+
+  // Create a person object with properties from the form inputs
+  const person = {
+    name: petitionInputs[0].value,
+    hometown: petitionInputs[1].value,
+    email: petitionInputs[2].value,
+    comments: petitionInputs[3].value
+  };
+
   let containsErrors = false;
 
-  // Validate each input field
-  [nameInput, hometownInput, emailInput, commentsInput].forEach(input => {
-    if (input.value.length < 2 || (input === emailInput && !input.value.includes('.com'))) {
-      input.classList.add('error');
+  // Validate each property of the person object
+  for (const prop in person) {
+    if (person[prop].length < 2 || (prop === 'email' && !person[prop].includes('@'))) {
+      petitionInputs[Object.keys(person).indexOf(prop)].classList.add('error');
       containsErrors = true;
     } else {
-      input.classList.remove('error');
+      petitionInputs[Object.keys(person).indexOf(prop)].classList.remove('error');
     }
-  });
+  }
 
   if (!containsErrors) {
     // Add the signature
-    const signatureElement = document.createElement('p');
-    signatureElement.classList.add('signature');
-    signatureElement.textContent = `🖊️ ${nameInput.value} from ${hometownInput.value} supports this.`;
-
-    const signaturesContainer = document.querySelector('.signatures');
-    signaturesContainer.appendChild(signatureElement);
+    addSignature(person);
 
     // Update the signature count
     count++;
@@ -217,13 +60,147 @@ const validateAndAddSignature = (event) => {
 
     // Reset form fields
     form.reset();
+
+    // Show the modal
+    toggleModal(person);
   }
+};
+
+// Function to add a signature
+const addSignature = (person) => {
+  const signatureElement = document.createElement('p');
+  signatureElement.classList.add('signature');
+  signatureElement.textContent = `🖊️ ${person.name} from ${person.hometown} supports this.`;
+
+  const signaturesContainer = document.querySelector('.signatures');
+  signaturesContainer.appendChild(signatureElement);
+};
+
+ Function to toggle the modal
+const toggleModal = (person) => {
+  const modal = document.getElementById('thanks-modal');
+  const modalContent = document.getElementById('thanks-modal-content');
+
+  modal.style.display = 'flex';
+  modalContent.textContent = `Thank you so much ${person.name}! ${person.hometown} represent!`;
+
+  setTimeout(() => {
+    modal.style.display = 'none';
+  }, 4000); // Hide the modal after 4 seconds
+};  
+
+// Attach the event listener to the button's click event
+signNowButton.addEventListener('click', validateAndAddSignature); 
+
+unit8 */
+
+// Create a new variable outside of any functions called scaleFactor and set it to 1
+let scaleFactor = 1;
+
+// Create another variable outside any function called modalImage that selects the image within the modal
+const modalImage = document.querySelector('.modal-content img');
+
+// Create a new function called scaleImage that takes no arguments
+const scaleImage = () => {
+  // Within the scaleImage function, it will first toggle the image size between a factor of 1 and 0.8.
+  scaleFactor = scaleFactor === 1 ? 0.8 : 1; // Using the ternary operator for conciseness
+
+  // Next, the function applies that scaleFactor to the image:
+  modalImage.style.transform = `scale(${scaleFactor})`;
+};
+
+// Function to close the modal
+const closeModal = () => {
+  const modal = document.getElementById('thanks-modal');
+  modal.style.display = 'none';
+};
+
+// Function to toggle the modal
+const toggleModal = (person) => {
+  const modal = document.getElementById('thanks-modal');
+  const modalContent = document.getElementById('thanks-modal-content');
+
+  modal.style.display = 'flex';
+  modalContent.textContent = `Thank you so much ${person.name}! ${person.hometown} represent!`;
+
+  const intervalId = setInterval(scaleImage, 500);
+
+  setTimeout(() => {
+    modal.style.display = 'none';
+    clearInterval(intervalId); // Stop the animation
+  }, 4000); // Hide the modal after 4 seconds
+};
+
+// Query for button with a class "submit-btn"
+const signNowButton = document.querySelector('.submit-btn');
+let count = 3; // Initial count of signatures
+
+// Function to validate the form and add a signature if validation passes
+const validateAndAddSignature = (event) => {
+  event.preventDefault(); // Prevent the default form submission behavior
+
+  const form = document.getElementById("sign-petition");
+  const petitionInputs = form.elements;
+
+  // Create a person object with properties from the form inputs
+  const person = {
+    name: petitionInputs[0].value,
+    hometown: petitionInputs[1].value,
+    email: petitionInputs[2].value,
+    comments: petitionInputs[3].value
+  };
+
+  let containsErrors = false;
+
+  // Validate each property of the person object
+  for (const prop in person) {
+    if (person[prop].length < 2 || (prop === 'email' && !person[prop].includes('@'))) {
+      petitionInputs[Object.keys(person).indexOf(prop)].classList.add('error');
+      containsErrors = true;
+    } else {
+      petitionInputs[Object.keys(person).indexOf(prop)].classList.remove('error');
+    }
+  }
+
+  if (!containsErrors) {
+    // Add the signature
+    addSignature(person);
+
+    // Update the signature count
+    count++;
+    const counterElement = document.getElementById('counter');
+    counterElement.textContent = `🖊️ ${count} people have signed this petition and support this cause.`;
+
+    // Reset form fields
+    form.reset();
+
+    // Show the modal
+    toggleModal(person);
+  }
+};
+
+// Function to add a signature
+const addSignature = (person) => {
+  const signatureElement = document.createElement('p');
+  signatureElement.classList.add('signature');
+  signatureElement.textContent = `🖊️ ${person.name} from ${person.hometown} supports this.`;
+
+  const signaturesContainer = document.querySelector('.signatures');
+  signaturesContainer.appendChild(signatureElement);
 };
 
 // Attach the event listener to the button's click event
 signNowButton.addEventListener('click', validateAndAddSignature);
 
+// Select the close modal button and add an event listener
+const closeModalBtn = document.getElementById('close-modal-btn');
+closeModalBtn.addEventListener('click', closeModal);
 
+
+
+
+
+/* adding reduce motion */
 let animation = {
   revealDistance: 150,
   initialOpacity: 0,
@@ -266,3 +243,4 @@ function reduceMotion() {
 reduceMotionBtn.addEventListener('click', reduceMotion);
 
 window.addEventListener('scroll', reveal);
+//end of reducemotion
