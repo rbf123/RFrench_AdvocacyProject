@@ -181,6 +181,9 @@ html {
 
 }
 
+
+
+
 h1 {
   color: #CC7870;
   font-size: 50px;
@@ -217,6 +220,9 @@ h6 {
   text-align: center;
 }
 
+
+
+
 .container {
   display: flex;
   justify-content: space-between;
@@ -251,11 +257,13 @@ h6 {
   transform: translateY(150px);
   opacity: 0;
   transition: all 2s ease;
+  
 }
 
 .active {
   transform: translateY(0);
   opacity: 1;
+  
 }
 
 
@@ -559,39 +567,37 @@ p {
 
 .video-container {
   display: flex;
-  justify-content: space-around;
-  /* This will space out the videos evenly */
-  align-items: center;
-  /* This will vertically align the videos in the middle */
+  justify-content: center; /* Center the container horizontally */
+  align-items: center; /* Center the container vertically */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  max-width: 100%; /* Ensure the container doesn't exceed the page width */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+.video-wrapper {
+  display: flex;
   flex-wrap: wrap;
-  /* This allows the videos to wrap into the next line on smaller screens */
+  justify-content: center; /* Center the video and image horizontally */
+  align-items: center; /* Center the video and image vertically */
+  max-width: 100%; /* Ensure the wrapper doesn't exceed the page width */
 }
 
 .video {
-  flex: 1;
-  /* This allows the videos to grow and take up equal space */
+  flex: 1 1 100%; /* Allow the video to grow and take up to 50% of the available space */
+  max-width: 560px; /* Set a maximum width for the video */
   padding: 10px;
-  /* Adds some space around each video */
+  text-align: center; /* Center the video content */
+}
+
+.video-image {
+  flex: 1 1 50%; /* Allow the image to grow and take up to 50% of the available space */
+  max-width: 100%; /* Ensure the image doesn't exceed its container */
+  height: auto; /* Maintain aspect ratio */
+  padding: 10px;
 }
 
 
-/* First article attempt - vertical rows of news articles
-article {
-    padding: 10px;
-    margin: 10px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-}
 
-article h3 {
-    color: #333;
-    font-size: 20px;
-}
-
-article p {
-    color: #555;
-    font-size: 16px;
-} */
 
 .articles-container {
   display: grid;
@@ -603,20 +609,25 @@ article p {
 article {
   padding: 10px;
   margin: 5px;
-  /* Reset the margin to ensure consistent spacing */
-  border: 1px solid #ccc;
-  background-color: #f9f9f9;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  /* This ensures the content is spaced out vertically */
   height: 100%;
-  /* Make articles of different content length look uniform */
+
+}
+
+article:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 article h3 {
   color: #333;
   font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
 }
 
 article p {
@@ -626,12 +637,14 @@ article p {
 
 ul.square {
   list-style: square;
-  /* Set square bullets for this unordered list */
   color: #E0D2B2 font-size: 20px;
   font-family: sans-serif;
 
 }
 
+
+
+  
 /* Define ruleset for unvisited links */
 a:link {
   color: blue;
@@ -914,7 +927,30 @@ text-align: center;
   margin-top: 10px;
 }
 
+.collapsible {
+  background-color: #EDE3C7;
+  color: rebeccapurple;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
 
+
+.active, .collapsible:hover {
+  background-color: ;
+}
+
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
 
 .footer {
   color: darkslategray;
