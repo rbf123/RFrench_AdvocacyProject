@@ -721,11 +721,17 @@ text-align: center;
   margin-right: 10px;
 }
 
-/* 2nd try Customize Dark Mode Theme */
+/* Dark Mode Theme */
 .dark-mode {
   background-color: #1a1a1a;
-  color: #f2f2f2;
+  color: #e6e6e6;
 }
+
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #e6e6e6;
+}
+
 
 .dark-mode .navbar ul {
   background-color: transparent;
@@ -744,23 +750,46 @@ text-align: center;
   color: #f2f2f2;
 }
 
+.dark-mode .container {
+  background-color: #1a1a1a;
+  color: #f2f2f2;
+}
+
+.dark-mode .content-container {
+  background-color: #1a1a1a;
+  color: #f2f2f2;
+}
+
 .dark-mode h1,
 .dark-mode h2,
 .dark-mode h3,
 .dark-mode h4,
 .dark-mode h5,
 .dark-mode h6 {
-  color: #f2f2f2;
+  background-color: #1a1a1a;
+  color: #ffffff;
 }
 
 .dark-mode p {
   color: #b3b3b3;
+  background-color:#1a1a1a;
 }
 
+.dark-mode .ul {
+  color: #b3b3b3;
+  background-color:#1a1a1a;
+}
+
+.dark-mode .li {
+  color: #b3b3b3;
+  background-color:#1a1a1a;
+}
 .dark-mode footer {
   color: #b3b3b3;
 }
 
+.dark-mode :focus {
+  outline: 2px solid #9370db; 
 }
 
 .dark-mode .callout-banner {
@@ -846,7 +875,20 @@ text-align: center;
   border-width: 2px;
   border-color: red;
   background: pink;
+} 
+
+/* Accent color for dark mode */
+.dark-mode a,
+.dark-mode button {
+  color: #9370db; /* A desaturated purple shade */
 }
+
+.dark-mode a:hover,
+.dark-mode button:hover {
+  color: #7a67cb; /* A slightly darker shade on hover */
+}
+
+
 
 /* The modal that covers the background and prevents user interactions */
 .modal {
@@ -949,7 +991,7 @@ text-align: center;
   padding: 0 18px;
   display: none;
   overflow: hidden;
-  background-color: #f1f1f1;
+  
 }
 
 .footer {
