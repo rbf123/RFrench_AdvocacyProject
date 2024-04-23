@@ -660,17 +660,53 @@ a:active {
 }
 
 #theme-button {
-  text-decoration: underline;
-  font: 20px;
-  color: #645B82 padding: 20px;
-  border: 1px dotted;
-  border-width: 1px;
+  padding: 10px 20px;
+  background-color: #1a1a1a; /* Button background color */
+  color: white; /* Text color */
+  text-decoration: underline; /* Text decoration */
+  border: none;
+  border-radius: 25px;
+  margin-left: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  cursor: pointer;
 }
 
-/* 1st try customize Dark Mode Theme 
-.dark-mode {
-background-color: black;
-  color: white; */
+#theme-button:hover {
+  background-color: #45a049; /* Button background color on hover */
+}
+
+#reduceMotionBtn {
+  padding: 10px 20px;
+  background-color: #A67669; /* Button background color */
+  color: white; /* Text color */
+  text-decoration: underline; /* Text decoration */
+  border: none;
+  border-radius: 25px;
+  margin-left: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+#reduceMotionBtn:hover {
+  background-color: #45a049; /* Button background color on hover */
+}
+
+text-align: center;
+  font-size: 90%;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 25px;
+  margin-left: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
 
 /* 2nd try Customize Dark Mode Theme */
 .dark-mode {
