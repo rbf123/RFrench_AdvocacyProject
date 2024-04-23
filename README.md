@@ -13,7 +13,7 @@ Website Features:
 - Dark Mode button
 - Reduce Motion button to stop scroll animation
 - Related news articles showing information about the knowledge gap from Covid & how tutoring can help
-- Interactive map of the USA featuring the ten most populated states with hover function, linked to resources at the relevant part of the website for users to access resources and information. (example: clicking Texas on the map will take you to the resources available in Texas)
+- Interactive HTML map of the USA featuring the ten most populated states with hover function using Javascript, linked to relevant parts of the website for users to access resources and information. (example: clicking Texas on the map will take you to the resources available in Texas)
 
 Future improvements:
 Add volunteering & tutoring information for the other states within the USA, and update the SVG container to include pathing and hover animation for the added states, add a feature that auto-updates the news articles section with the latest related news
