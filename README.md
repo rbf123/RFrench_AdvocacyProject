@@ -4,7 +4,7 @@
 🔗 Website Link: https://rbf123.github.io/RFrench_AdvocacyProject/
 
 It is a one-page website that is fully styled and responsive on an activism topic that I care about - educational equity.
-Created using HTML, CSS and Javascript, this project was created while I was attending CodePath's Spring 2024 WebDev101 class. 
+Created using HTML, CSS and Javascript, this project was created while I was attending CodePath's Spring 2024 WebDev101 class. I added extra features like the interactive HTML / Javascript map and extra resources for website users living outside of the project's featured city - Austin, Texas.
 
 Website Features:
 - Information about the topic of educational equity: the impact of the Covid-19 pandemic to students, what is learning loss, how volunteer tutoring can bridge that learning gap, resources for students and volunteers to organizations that help through tutoring online and in person, how to find more info online about communities local to you, and how to donate to local classrooms.
